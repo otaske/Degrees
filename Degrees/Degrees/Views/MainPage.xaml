@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Degrees.Views.MainPage"
+    BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout
+        Padding="20">
+            <Label
+                HorizontalOptions="Center"
+                FontSize="Large"
+                Text="DEGREES">
+            </Label>
+            <Label
+                HorizontalOptions="Center"
+                FontSize="Medium"
+                Text="(MVVM)">
+            </Label>
+            <Label 
+                Text="Temperature:">
+            </Label>
+            <Entry 
+                Text="{Binding Temperature, Mode=TwoWay}"
+                Keyboard="Numeric"
+                PlaceholderColor="Black"
+                Placeholder="Enter the appropriate temperature...">
+            </Entry>
+            <Button 
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Small"
+                BackgroundColor="Aquamarine"
+                Command="{Binding ConvertCommand}"
+                Text="Convert Celsius">
+            </Button>
+            <Button 
+                HorizontalOptions="CenterAndExpand"
+                FontSize="Small"
+                BackgroundColor="Tomato"
+                Command="{Binding ConvertCommand2}"
+                Text="Convert Fahrenheit">
+            </Button>
+            <Label
+                Text="Celsius Degrees:">
+            </Label>
+            <Entry
+                Text="{Binding Celsius, Mode=TwoWay}"
+                IsEnabled="False"
+                PlaceholderColor="Black"
+                Placeholder="Temperature in Celsius...">
+            </Entry>
+            <Label
+                Text="Fahrenheit Degrees:">
+            </Label>
+            <Entry
+                Text="{Binding Fahrenheit, Mode=TwoWay}"
+                IsEnabled="False"
+                PlaceholderColor="Black"
+                Placeholder="Temperature in Fahrenheit...">
+            </Entry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
